@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
-  get 'contracts/new'
+  # For '/' to also redirect to home
+  get '/', to: "pages#home"
+  get '/profile', to: "pages#profile"
+  # To have Proposals nested in Projects
+  resources :projects do
+    resources :proposals, only: [:new, :create]
+  end
+  resources :contracts
+  resources :proposals, only: [:index, :show, :destroy]
 
-  get 'proposals/index'
-
-  get 'projects/new'
-
-  get 'projects/create'
-
-  get 'projects/index'
-
-  get 'projects/show'
 
   devise_for :users
   root to: 'pages#home'

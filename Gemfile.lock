@@ -57,7 +57,7 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
-    erubi (1.7.0)
+    erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.23)
     figaro (1.1.1)
@@ -99,7 +99,7 @@ GEM
       pry (>= 0.10.4)
     puma (3.11.2)
     rack (2.0.4)
-    rack-proxy (0.6.3)
+    rack-proxy (0.6.4)
       rack
     rack-test (0.8.3)
       rack (>= 1.0, < 3)
