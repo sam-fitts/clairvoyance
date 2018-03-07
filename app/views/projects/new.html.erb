@@ -1,2 +1,8 @@
-<h1>Projects#new</h1>
-<p>Find me in app/views/projects/new.html.erb</p>
+<%= simple_form_for @project do |f| %>
+  <%= f.input :name %>
+  <%= f.input :duration %>
+  <%= f.input :description %>
+  <%= f.input :difficulty %>
+  <%= f.input :budget %>
+  <%= f.input :tags, placeholder: "Industry, high-pressure, etc." %>
+<% end %>
