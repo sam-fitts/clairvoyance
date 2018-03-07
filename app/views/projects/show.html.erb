@@ -1,0 +1,11 @@
+<%# @project do |part| %>
+  <%= @project.name %>
+  <%= @project.duration %>
+  <%= @project.description %>
+  <%= @project.difficulty %>
+  <%= @project.budget %>
+<%# end %>
+
+<% if current_user.agency == true %>
+<%= link_to "Submit Proposal", new_project_proposal_path(@project.id)  %>
+<% end %>

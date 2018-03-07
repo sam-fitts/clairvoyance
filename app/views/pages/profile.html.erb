@@ -1,0 +1,7 @@
+<% if current_user.agency == false %>
+<%= link_to "Submit a Project", new_project_path %>
+<% end %>
+
+<% if current_user.agency == true %>
+<%= link_to "Search for Projects", projects_path %>
+<% end %>

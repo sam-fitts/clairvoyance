@@ -8,18 +8,18 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @projects = Project.new
+    @project = Project.new
   end
 
   def create
     @project = Project.new(project_params)
     @user = current_user
-    @project.user = @user
+    @project.business_id = @user.id
     if @project.save
-      redirect_to project_path(@project)
+      redirect_to profile_path
     else
-      @project = Project.all
-      render 'users/show'
+      render :new
+    end
   end
 
   def edit

@@ -1,8 +1,9 @@
 <%= simple_form_for @project do |f| %>
   <%= f.input :name %>
-  <%= f.input :duration %>
-  <%= f.input :description %>
-  <%= f.input :difficulty %>
+  <%= f.input :duration, placeholder: "6 months, 12 months, etc." %>
+  <%= f.input :description, placeholder: "Tell us about your expectations." %>
+  <%= f.input :difficulty, as: :select, include_blank: false, collection: ['Low', 'Intermediate', 'High', 'We Expect The Impossible', 'Satan Himself Designed This'] %>
   <%= f.input :budget %>
   <%= f.input :tags, placeholder: "Industry, high-pressure, etc." %>
+  <%= f.submit "Create Your Project" %>
 <% end %>
