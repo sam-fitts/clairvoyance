@@ -1,0 +1,5 @@
+<%= simple_form_for [@project, @proposal]  do |f| %>
+  <%= f.input :description %>
+  <%= f.input :bid_amount %>
+  <%= f.submit "Submit Proposal" %>
+<% end %>

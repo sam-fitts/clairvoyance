@@ -1,5 +1,5 @@
 class Proposal < ApplicationRecord
-  belongs_to :user
+  belongs_to :agency, class_name: 'User'
   belongs_to :project
   has_one :contract
 end

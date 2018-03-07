@@ -1,4 +1,4 @@
 class Project < ApplicationRecord
-  belongs_to :user
+  belongs_to :business, class_name: 'User'
   has_many :proposals
 end

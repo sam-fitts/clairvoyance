@@ -8,18 +8,21 @@ class ProposalsController < ApplicationController
   end
 
   def create
+    @project = Project.find(params[:project_id])
     @proposal = Proposal.new(proposal_params)
-    @user = current_user
-    @proposal.user = @user
+    # @user = current_user
+    @proposal.agency = current_user
+    @proposal.project = @project
     if @proposal.save
-      redirect_to proposal_path(@proposal)
+      redirect_to profile_path
     else
-      @proposal = Proposal.all
-      render 'users/show'
+      render :new
+    end
   end
 
   def new
     @proposal = Proposal.new
+    @project = Project.find(params[:project_id])
   end
 
   def edit
@@ -42,6 +45,6 @@ class ProposalsController < ApplicationController
   private
 
   def proposal_params
-    params.require(:project).permit(:bid_amount, :agency_id, :project_id, :description)
+    params.require(:proposal).permit(:bid_amount, :agency_id, :project_id, :description)
   end
 end
