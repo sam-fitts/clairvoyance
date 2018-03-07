@@ -16,36 +16,36 @@ ActiveRecord::Schema.define(version: 20180306023042) do
   enable_extension "plpgsql"
 
   create_table "contracts", force: :cascade do |t|
-    t.bigint "proposal_id_id"
-    t.bigint "business_id_id"
+    t.bigint "proposal_id"
+    t.bigint "business_id"
     t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["business_id_id"], name: "index_contracts_on_business_id_id"
-    t.index ["proposal_id_id"], name: "index_contracts_on_proposal_id_id"
+    t.index ["business_id"], name: "index_contracts_on_business_id"
+    t.index ["proposal_id"], name: "index_contracts_on_proposal_id"
   end
 
   create_table "projects", force: :cascade do |t|
     t.integer "budget"
-    t.bigint "business_id_id"
+    t.bigint "business_id"
     t.string "tags"
     t.string "name"
     t.datetime "duration"
     t.string "difficulty"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["business_id_id"], name: "index_projects_on_business_id_id"
+    t.index ["business_id"], name: "index_projects_on_business_id"
   end
 
   create_table "proposals", force: :cascade do |t|
     t.integer "bid_amount"
-    t.bigint "agency_id_id"
-    t.bigint "project_id_id"
+    t.bigint "agency_id"
+    t.bigint "project_id"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["agency_id_id"], name: "index_proposals_on_agency_id_id"
-    t.index ["project_id_id"], name: "index_proposals_on_project_id_id"
+    t.index ["agency_id"], name: "index_proposals_on_agency_id"
+    t.index ["project_id"], name: "index_proposals_on_project_id"
   end
 
   create_table "users", force: :cascade do |t|
