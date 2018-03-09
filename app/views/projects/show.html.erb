@@ -1,11 +1,20 @@
-<%# @project do |part| %>
-  <%= @project.name %>
-  <%= @project.duration %>
-  <%= @project.description %>
-  <%= @project.difficulty %>
-  <%= @project.budget %>
-<%# end %>
+<header class="masthead">
+  <div class="container">
+<!--     <div class="intro-text"> -->
+      <h2><%= @project.name %></h2>
 
-<% if current_user.agency == true %>
-<%= link_to "Submit Proposal", new_project_proposal_path(@project.id)  %>
-<% end %>
+        <%# @projects.each do |project| %>
+          <p><strong>Duration:</strong> <%= @project.duration %></p>
+          <p><strong>Description:</strong> <%= @project.description %></p>
+          <p><strong>Difficulty:</strong> <%= @project.difficulty %></p>
+          <p><strong>Budget:</strong> <%= @project.budget %></p>
+          <p><strong>Applicable tags:</strong> <%= @project.tags %></p>
+          <p><%= link_to "Submit Proposal", new_project_proposal_path(@project.id), class: "btn btn-danger text-uppercase js-scroll-trigger" %></p>
+        <%# end %>
+<!--       </div> -->
+    </div>
+  </header>
+
+
+
+
