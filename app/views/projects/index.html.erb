@@ -1,9 +1,18 @@
-<% @projects.each do |project| %>
-  <%= project.name %>
-  <%= project.duration %>
-  <%= project.description %>
-  <%= project.difficulty %>
-  <%= project.budget %>
-  <%= project.tags %>
-  <%= link_to "View Project", project_path(project) %>
-<% end %>
+<header class="masthead">
+  <div class="container">
+<!--     <div class="intro-text"> -->
+      <h2>Available ad campaigns:</h2>
+
+        <% @projects.each do |project| %>
+          <p><strong>Project name:</strong> <%= project.name %></p>
+          <p><strong>Duration:</strong> <%= project.duration %></p>
+          <p><strong>Description:</strong> <%= project.description %></p>
+          <p><strong>Difficulty:</strong> <%= project.difficulty %></p>
+          <p><strong>Budget:</strong> <%= project.budget %></p>
+          <p><strong>Applicable tags:</strong> <%= project.tags %></p>
+          <p><%= link_to "View Project", project_path(project), class: "btn btn-success text-uppercase js-scroll-trigger" %></p>
+          <hr>
+        <% end %>
+<!--       </div> -->
+    </div>
+  </header>

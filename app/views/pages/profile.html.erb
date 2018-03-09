@@ -1,7 +1,11 @@
-<% if current_user.agency == false %>
-<%= link_to "Submit a Project", new_project_path %>
-<% end %>
+<header class="masthead">
+  <div class="container">
+    <% if current_user.agency == false %>
+     <h2><%= link_to "SUBMIT A PROJECT", new_project_path, class: "btn btn-danger text-uppercase js-scroll-trigger" %></h2>
+    <% end %>
 
-<% if current_user.agency == true %>
-<%= link_to "Search for Projects", projects_path %>
-<% end %>
+    <% if current_user.agency == true %>
+     <h2><%= link_to "SEARCH FOR PROJECTS", projects_path, class: "btn btn-danger text-uppercase js-scroll-trigger" %></h2>
+    <% end %>
+  </div>
+</header>
