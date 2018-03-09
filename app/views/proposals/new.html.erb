@@ -1,10 +1,12 @@
 <header class="masthead">
   <div class="container">
-    <h2>Submit proposal for <%= @project.name %></h2>
-    <%= simple_form_for [@project, @proposal]  do |f| %>
-        <%= f.input :description %>
-        <%= f.input :bid_amount %>
-        <%= f.submit "Submit Proposal" %>
-      <% end %>
+    <div class="form-inputs formatted-page">
+      <h2>Submit proposal for <%= @project.name %></h2>
+      <%= simple_form_for [@project, @proposal]  do |f| %>
+          <%= f.input :description %>
+          <%= f.input :bid_amount %>
+          <%= f.submit "Submit Proposal" %>
+        <% end %>
+    </div>
   </div>
 </header>
