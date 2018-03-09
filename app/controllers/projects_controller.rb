@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
     @user = current_user
     @project.business_id = @user.id
     if @project.save
-      redirect_to profile_path
+      redirect_to projects_path
     else
       render :new
     end

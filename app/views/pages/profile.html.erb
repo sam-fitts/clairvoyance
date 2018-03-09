@@ -7,5 +7,7 @@
     <% if current_user.agency == true %>
      <h2><%= link_to "SEARCH FOR PROJECTS", projects_path, class: "btn btn-danger text-uppercase js-scroll-trigger" %></h2>
     <% end %>
+
+    <%= link_to "Your Projects", "projects" %>
   </div>
 </header>
