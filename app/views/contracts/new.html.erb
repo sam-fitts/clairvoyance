@@ -1,2 +1,4 @@
-<h1>Contracts#new</h1>
-<p>Find me in app/views/contracts/new.html.erb</p>
+<%= simple_form_for @contract do |f| %>
+  <%= f.input :pdf, label: "Upload a PDF" %>
+  <%= f.input :pdf_cache, as: :hidden %>
+<% end %>

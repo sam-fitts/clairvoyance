@@ -5,6 +5,8 @@
       <%= simple_form_for [@project, @proposal]  do |f| %>
           <%= f.input :description %>
           <%= f.input :bid_amount %>
+          <%= f.input :pdf, label: "Upload a PDF" %>
+          <%= f.input :pdf_cache, as: :hidden %>
           <%= f.submit "Submit Proposal" %>
         <% end %>
     </div>
