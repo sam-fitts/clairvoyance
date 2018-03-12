@@ -6,11 +6,41 @@
         <%= f.input :name %>
         <%= f.input :duration, placeholder: "6 months, 12 months, etc." %>
         <%= f.input :description, placeholder: "Tell us about your expectations." %>
-        <%= f.input :difficulty, as: :select, include_blank: false, collection: ['Low', 'Intermediate', 'High', 'We Expect The Impossible', 'Satan Himself Designed This'] %>
+        <%= f.input :difficulty, as: :select, include_blank: false, collection: ['Low', 'Intermediate', 'High'] %>
         <%= f.input :budget %>
         <%= f.input :tags, placeholder: "Industry, high-pressure, etc." %>
+        <%= f.input :goal, placeholder: "What are your campaign goals?" %>
+        <%= f.input :target_audience, placeholder: "Describe your target audience in detail." %>
+        <%= f.input :info, placeholder: "What information do your customers need to make an informed buying decision?" %>
+        <%= f.input :current_tools, label: 'What current advertising tools are you using?', as: :check_boxes, collection: ['Twitter', 'Google Adwords', 'Facebook', 'Amazon', 'Ebay', 'Airbnb', 'Uber', 'Yahoo', 'Youtube', 'LinkedIn' 'Other digital marketing agency', 'None'] %>
+        <%= f.input :problems, label: 'What problem is your product/ service trying to solve?', placeholder: "What problems do your product or service seek to solve?" %>
+        <%= f.input :metrics, label: 'Which metrics are you most interested in improving? Check all that apply.', as: :check_boxes, collection: ['Revenue', 'Clicks', 'Conversions [Sales/ Leads]', 'Followers', 'Visitors', 'Subscribers', 'Return on Ad Spend'] %>
+        <%= f.input :visiting, label: 'When your audience visits your website, what are you aiming for them to do? Check all that apply.', as: :check_boxes, collection: ['Fill a form', 'Buy a physical product', 'Buy a digital product', 'Purchase a recurring subscription', 'Buy a non-digital service', 'Provide feedback to you in the form of a survey', 'Use your free service', 'Provide online input in improving your product [ex. providing code, or marketing ideas', 'other'] %>
+        <%= f.input :season, label: 'What season(s) are you busiest?', placeholder: "Type in your busiest season(s)." %>
+        <%= f.input :in_house, label: 'Do you currently have designers or web developers in-house?', placeholder: "Mention in-house, part-time, contracted, feel free to describe." %>
+        <%= f.input :agencies, label: 'Have you previously worked with agencies before? What made you change agencies?', placeholder: "We'd like to know how we could improve your experience." %>
+        <%= f.input :non_profit, label: 'Were you previously involved in any non-profit or eco-friendly work?', placeholder: "Yes or no? If yes, feel free to explain as much as you like." %>
+        <%= f.input :current_metrics, label: 'Are you comfortable sharing your current metrics?', placeholder: "Metrics, can be any results of any previous ad campaigns, just to know what to do better." %>
+        <%= f.input :values, label: 'What values & beliefs define your brand?', placeholder: "One word values, phrases, anything you would like your brand to represent." %>
+        <%= f.input :tactic, label: 'Are there any specific marketing tactics that have generated the most value for your company?', placeholder: "Type in any effective tactics you have tried." %>
         <%= f.submit "Create Your Project" %>
       <% end %>
     </div>
   </div>
 </header>
+
+
+<!-- add_column :projects, :goal, :text
+    add_column :projects, :target_audience, :text
+    add_column :projects, :info, :text
+    add_column :projects, :current_tools, :string
+    add_column :projects, :problems, :string
+    add_column :projects, :metrics, :string
+    add_column :projects, :visiting, :string
+    add_column :projects, :season, :string
+    add_column :projects, :in_house, :boolean
+    add_column :projects, :agencies, :text
+    add_column :projects, :non_profit, :text
+    add_column :projects, :current_metrics, :boolean
+    add_column :projects, :values, :text
+    add_column :projects, :tactic, :text -->
