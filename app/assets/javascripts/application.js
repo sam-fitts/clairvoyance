@@ -1,3 +1,4 @@
 //= require rails-ujs
 //= require_tree .
-//= require agency.min.js
+//= require jquery
+//= require bootstrap-sprockets
