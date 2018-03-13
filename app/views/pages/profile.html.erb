@@ -2,11 +2,13 @@
   <div class="container">
     <% if current_user.agency == false %>
      <h2><%= link_to "SUBMIT A PROJECT", new_project_path, class: "btn btn-danger text-uppercase js-scroll-trigger" %></h2>
+     <%= link_to "Your Projects", "projects" %>
     <% end %>
 
     <% if current_user.agency == true %>
      <h2><%= link_to "SEARCH FOR PROJECTS", projects_path, class: "btn btn-danger text-uppercase js-scroll-trigger" %></h2>
     <% end %>
+
 
     <%= link_to "Your Projects", "projects" %>
 
@@ -46,6 +48,7 @@
           <% end %>
       </div>
     </div>
+
   </div>
 </header>
 

@@ -1,4 +1,5 @@
 class ProposalsController < ApplicationController
+
   def index
     @proposals = Proposal.all
   end
@@ -45,6 +46,6 @@ class ProposalsController < ApplicationController
   private
 
   def proposal_params
-    params.require(:proposal).permit(:bid_amount, :agency_id, :project_id, :description)
+    params.require(:proposal).permit(:bid_amount, :agency_id, :project_id, :description, :pdf, :pdf_cache)
   end
 end
