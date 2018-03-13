@@ -1,4 +1,6 @@
 class ContractsController < ApplicationController
+  mount_uploader :pdf, PdfUploader
+
   def new
     @contract = Contract.new
   end
@@ -18,6 +20,6 @@ class ContractsController < ApplicationController
   private
 
   def contract_params
-    params.require(:project).permit(:proposal_id, :business_id, :amount)
+    params.require(:project).permit(:proposal_id, :business_id, :amount, :pdf, :pdf_cache)
   end
 end
