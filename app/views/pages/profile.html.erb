@@ -10,5 +10,45 @@
     <% end %>
 
 
+    <%= link_to "Your Projects", "projects" %>
+
+
+   <div class="row">
+      <div class="col-xs-6">
+
+        <h2>Alternate Ad Sources</h2>
+
+          <div class="card-white">
+            <h1>test</h1>
+            <p>test</p>
+          </div>
+
+      </div>
+
+      <div class="col-xs-6">
+        <h2>Your Campaigns</h2>
+          <% current_user.projects.each do |project| %>
+              <!-- <div class="card">
+                <h3></h3>
+                <p><%= project.budget %></p>
+                <p><%= project.description %></p>
+              </div> -->
+              <img src="" alt="">
+
+              <div class="card" style="background-image: url('<%= image_path('advertising-photo.jpg') %>')">
+                <div class="card-category">Pending</div>
+                <div class="card-description">
+                  <h2><%= project.name %></h2>
+                  <p><%= project.budget %></p>
+                  <p><%= project.tags %></p>
+                </div>
+                <a class="card-link" href="#" ></a>
+              </div>
+
+          <% end %>
+      </div>
+    </div>
+
   </div>
 </header>
+
