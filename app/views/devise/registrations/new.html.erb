@@ -1,24 +1,15 @@
-<header class="masthead">
-  <div class="container">
-    <h2>SIGN UP</h2>
-
+  <br>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
-      <div class="form-inputs formatted-page">
+      <div class="form-control formatted-page">
+        <h2>SIGN UP</h2>
         <%= f.input :business_name, required: true, autofocus: true  %>
         <%= f.input :email, required: true%>
         <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
         <%= f.input :password_confirmation, required: true %>
         <%= f.input :agency, as: :select, label: "User Type", collection: [["Client",false],["Agency",true]], include_blank: true, required: true %>
         <%#= f.collection_radio_buttons :agency, [[false, "Client"],[true, "Agency"]], :first, :last %>
-      </div>
-
-      <div class="form-actions">
-        <%= f.button :submit, "Sign up" %>
+        <%= f.button :submit, "Register", class: "btn btn-primary" %><br>
       </div>
     <% end %>
-
-    <%= render "devise/shared/links" %>
-  </div>
-</header>
