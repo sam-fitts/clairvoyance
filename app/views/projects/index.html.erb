@@ -1,9 +1,10 @@
-<header class="masthead">
-  <div class="container">
+<br>
+  <div class="form-control formatted-page">
 <!--     <div class="intro-text"> -->
       <h2>Available ad campaigns:</h2>
 
         <% @projects.each do |project| %>
+          <hr>
           <p><strong>Project name:</strong> <%= project.name %></p>
           <p><strong>Duration:</strong> <%= project.duration %></p>
           <p><strong>Description:</strong> <%= project.description %></p>
@@ -15,4 +16,3 @@
         <% end %>
 <!--       </div> -->
     </div>
-  </header>

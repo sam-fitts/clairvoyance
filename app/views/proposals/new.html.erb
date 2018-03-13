@@ -1,14 +1,12 @@
-<header class="masthead">
-  <div class="container">
-    <div class="form-inputs formatted-page">
+<br>
+  <div class="form-control formatted-page">
       <h2>Submit proposal for <%= @project.name %></h2>
       <%= simple_form_for [@project, @proposal]  do |f| %>
           <%= f.input :description %>
           <%= f.input :bid_amount %>
-          <%= f.input :pdf, label: "Upload a PDF" %>
+          <%= f.input :pdf, label: "Upload a PDF  " %>
           <%= f.input :pdf_cache, as: :hidden %>
-          <%= f.submit "Submit Proposal" %>
+          <%#= f.submit "Submit Proposal" %>
+          <%= f.button :submit, "Submit Proposal", class: "btn btn-primary" %><br>
         <% end %>
     </div>
-  </div>
-</header>

@@ -1,9 +1,9 @@
 <!-- <header class="masthead"> -->
   <br>
-  <div class="form-control formatted-page">
+  <div class="form-control formatted-page-expanded">
     <% if current_user.agency == false %>
      <h2><%= link_to "SUBMIT A PROJECT", new_project_path, class: "btn btn-danger text-uppercase js-scroll-trigger" %></h2>
-     <%= link_to "Your Projects", "projects" %>
+     <%#= link_to "Your Projects", "projects" %>
     <% end %>
 
     <% if current_user.agency == true %>
@@ -11,23 +11,18 @@
     <% end %>
 
 
-    <%= link_to "Your Projects", "projects" %>
+    <%#= link_to "Your Projects", "projects" %>
 
-
+<!--
    <div class="row">
-      <div class="col-xs-6">
+      <div class="col-xs-6"> -->
 
-        <h2>Alternate Ad Sources</h2>
 
-          <div class="card-white">
-            <h1>test</h1>
-            <p>test</p>
-          </div>
 
-      </div>
+<!--       </div> -->
 
-      <div class="col-xs-6">
-        <h2>Your Campaigns</h2>
+<!--       <div class="col-xs-6"> -->
+        <br><br><h2>Your Campaigns</h2>
           <% current_user.projects.each do |project| %>
               <!-- <div class="card">
                 <h3></h3>
@@ -47,9 +42,17 @@
               </div>
 
           <% end %>
-      </div>
-    </div>
 
-  </div>
+                  <br><br><h2>Alternate Ad Sources</h2>
+
+          <div class="card-white">
+            <h1>test</h1>
+            <p>test</p>
+          </div>
+      </div>
+<!--     </div>
+
+  </div> -->
+
 <!-- </header> -->
 
