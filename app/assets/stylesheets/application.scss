@@ -152,3 +152,18 @@ section.big-product .info a.add-to-cart {
 //   max-width: 100%;
 //   height: auto;
 // }
+
+
+.formatted-page {
+  width: 45%;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+  // background-color: #F6E1EE;
+  // border: 2px solid #E9D6E3;
+  border-radius: 14px;
+}
+.formatted-page h1 {
+  padding-top: 10px;
+}
