@@ -1,11 +1,14 @@
 class ProposalsController < ApplicationController
 
   def index
-    @proposals = Proposal.all
+    @project = Project.find(params[:project_id])
+    @proposals = @project.proposals
   end
 
   def show
     @proposal = Proposal.find(params[:id])
+    @project = Project.find(params[:project_id])
+
   end
 
   def create
@@ -31,9 +34,15 @@ class ProposalsController < ApplicationController
   end
 
   def update
+    @project = Project.find(params[:project_id])
     @proposal = Proposal.find(params[:id])
-    @proposal.update(params[:proposal])
-    @proposals.save
+    # @proposal.update(proposal_params)
+    if @proposal.update(proposal_params)
+      redirect_to profile_path
+    else
+      render :show
+    end
+
   end
 
   def destroy
@@ -46,6 +55,6 @@ class ProposalsController < ApplicationController
   private
 
   def proposal_params
-    params.require(:proposal).permit(:bid_amount, :agency_id, :project_id, :description, :pdf, :pdf_cache)
+    params.require(:proposal).permit(:bid_amount, :agency_id, :project_id, :description, :pdf, :pdf_cache, :accepted)
   end
 end
