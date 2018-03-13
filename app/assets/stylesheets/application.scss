@@ -99,10 +99,14 @@ header.masthead .intro-text .intro-lead-in{
   // font-family:'Droid Serif','Helvetica Neue',Helvetica,Arial,sans-serif
 }
 
+#adjust-height {
+  line-height: 100px;
+}
+
 header.masthead .intro-text .intro-heading{
   font-size:75px;
   font-weight:700;
-  line-height:75px;
+  line-height:30px;
   margin-bottom:40px;
   font-family:Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif
   }
