@@ -1,7 +1,6 @@
-<header class="masthead">
-  <div class="container">
-    <div class="form-inputs formatted-page">
-      <h2>SUBMIT A PROJECT</h2>
+  <br>
+    <div class="form-control formatted-page">
+      <h2>SUBMIT A PROJECT</h2><br>
       <%= simple_form_for @project do |f| %>
         <%= f.input :name %>
         <%= f.input :duration, placeholder: "6 months, 12 months, etc." %>
@@ -23,11 +22,13 @@
         <%= f.input :current_metrics, label: 'Are you comfortable sharing your current metrics?', placeholder: "Metrics, can be any results of any previous ad campaigns, just to know what to do better." %>
         <%= f.input :values, label: 'What values & beliefs define your brand?', placeholder: "One word values, phrases, anything you would like your brand to represent." %>
         <%= f.input :tactic, label: 'Are there any specific marketing tactics that have generated the most value for your company?', placeholder: "Type in any effective tactics you have tried." %>
-        <%= f.submit "Create Your Project" %>
+        <%#= f.submit "Create Your Project" %>
+        <%= f.button :submit, "Create Your Project", class: "btn btn-primary" %><br>
       <% end %>
     </div>
-  </div>
-</header>
+    <br>
+
+
 
 
 <!-- add_column :projects, :goal, :text
