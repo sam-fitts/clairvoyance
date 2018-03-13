@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   # To have Proposals nested in Projects
 
   resources :projects do
-    resources :proposals, only: [:new, :create]
+    resources :proposals, only: [:new, :create, :index, :show, :edit, :update]
   end
   resources :contracts
-  resources :proposals, only: [:index, :show, :destroy]
+  resources :proposals, only: [:destroy]
 
 
   devise_for :users
