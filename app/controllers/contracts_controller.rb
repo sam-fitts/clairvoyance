@@ -1,5 +1,5 @@
 class ContractsController < ApplicationController
-  mount_uploader :pdf, PdfUploader
+  # mount_uploader :pdf, PdfUploader
 
   def new
     @contract = Contract.new
