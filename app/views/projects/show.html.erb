@@ -7,7 +7,7 @@
           <p><strong>Duration:</strong> <%= @project.duration %></p>
           <p><strong>Description:</strong> <%= @project.description %></p>
           <p><strong>Difficulty:</strong> <%= @project.difficulty %></p>
-          <p><strong>Budget:</strong> <%= @project.budget %></p>
+          <p><strong>Budget(US$):</strong> <%= @project.budget %></p>
           <p><strong>Applicable tags:</strong> <%= @project.tags %></p>
           <% if current_user.agency == true %>
           <p><%= link_to "Submit Proposal", new_project_proposal_path(@project.id), class: "btn btn-danger text-uppercase js-scroll-trigger" %></p>

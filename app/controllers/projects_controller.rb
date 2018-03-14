@@ -43,7 +43,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:budget, :business_id, :tags, :name, :duration, :difficulty)
+    params.require(:project).permit(:budget, :business_id, :tags, :name, :duration, :difficulty, :goal, :target_audience,  :info,  :current_tools,  :problems, :metrics, :visiting, :season, :in_house, :agencies, :non_profit, :current_metrics, :values, :tactic)
   end
 
 end
