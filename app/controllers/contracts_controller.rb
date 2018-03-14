@@ -2,13 +2,18 @@ class ContractsController < ApplicationController
 
   def new
     @contract = Contract.new
+    @project = Project.find(params[:project_id])
+    @proposal = Proposal.find(params[:proposal_id])
   end
 
   def create
     @contract = Contract.new(contract_params)
-    @contract.user = current_user
+    @contract.agency = current_user
+    @project = Project.find(params[:project_id])
+    @proposal = Proposal.find(params[:proposal_id])
+    @contract.proposal = @proposal
     if @contract.save
-      redirect_to contract_path(@contract)
+      redirect_to profile_path
     else
       render :new
     end

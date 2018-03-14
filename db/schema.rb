@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180313022323) do
+ActiveRecord::Schema.define(version: 20180314070435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "contracts", force: :cascade do |t|
     t.bigint "proposal_id"
-    t.bigint "business_id"
     t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "pdf"
-    t.index ["business_id"], name: "index_contracts_on_business_id"
+    t.bigint "agency_id"
+    t.index ["agency_id"], name: "index_contracts_on_agency_id"
     t.index ["proposal_id"], name: "index_contracts_on_proposal_id"
   end
 
@@ -87,4 +87,5 @@ ActiveRecord::Schema.define(version: 20180313022323) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "contracts", "users", column: "agency_id"
 end
