@@ -9,7 +9,9 @@
           <p><strong>Difficulty:</strong> <%= @project.difficulty %></p>
           <p><strong>Budget:</strong> <%= @project.budget %></p>
           <p><strong>Applicable tags:</strong> <%= @project.tags %></p>
+          <% if current_user.agency == true %>
           <p><%= link_to "Submit Proposal", new_project_proposal_path(@project.id), class: "btn btn-danger text-uppercase js-scroll-trigger" %></p>
+          <% end %>
         <%# end %>
 <!--       </div> -->
 <%= link_to "Active Proposals", project_proposals_path(@project) %>

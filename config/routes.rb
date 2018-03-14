@@ -6,9 +6,11 @@ Rails.application.routes.draw do
   # To have Proposals nested in Projects
 
   resources :projects do
-    resources :proposals, only: [:new, :create, :index, :show, :edit, :update]
+    resources :proposals, only: [:new, :create, :index, :show, :edit, :update] do
+      resources :contracts
+    end
   end
-  resources :contracts
+
   resources :proposals, only: [:destroy]
 
 

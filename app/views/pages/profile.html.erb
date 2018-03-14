@@ -1,58 +1,64 @@
-<!-- <header class="masthead"> -->
   <br>
   <div class="form-control formatted-page-expanded">
     <% if current_user.agency == false %>
-     <h2><%= link_to "SUBMIT A PROJECT", new_project_path, class: "btn btn-danger text-uppercase js-scroll-trigger" %></h2>
-     <%#= link_to "Your Projects", "projects" %>
-    <% end %>
-
-    <% if current_user.agency == true %>
-     <h2><%= link_to "SEARCH FOR PROJECTS", projects_path, class: "btn btn-danger text-uppercase js-scroll-trigger" %></h2>
-    <% end %>
-
-
-    <%#= link_to "Your Projects", "projects" %>
-
-<!--
-   <div class="row">
-      <div class="col-xs-6"> -->
-
-
-
-<!--       </div> -->
-
-<!--       <div class="col-xs-6"> -->
-        <br><br><h2>Your Campaigns</h2>
+     <h2><%= link_to "SUBMIT A CAMPAIGN", new_project_path, class: "btn btn-danger text-uppercase js-scroll-trigger" %></h2>
+       <br><br><h2>Your Campaigns</h2>
           <% current_user.projects.each do |project| %>
-              <!-- <div class="card">
-                <h3></h3>
-                <p><%= project.budget %></p>
-                <p><%= project.description %></p>
-              </div> -->
+
               <img src="" alt="">
 
               <div class="card" style="background-image: url('<%= image_path('advertising-photo.jpg') %>')">
                 <div class="card-category">Pending</div>
                 <div class="card-description">
-                  <h2><%= project.name %></h2>
-                  <p><%= project.budget %></p>
-                  <p><%= project.tags %></p>
+                  <h2>Name: <%= project.name %></h2>
+                  <p>Budget: <%= project.budget %></p>
+                  <p>Tags: <%= project.tags %></p>
+                  <p>Active Proposals <%= project.proposals.count %></p>
                 </div>
-                <a class="card-link" href="#" ></a>
+                <!-- <a class="card-link" href="#" ></a> -->
+                <%= link_to "See Details", project_path(project.id), class: "btn btn-success" %>
+                <%= link_to "See Active Proposals", project_proposals_path(project.id) %>
               </div>
 
           <% end %>
 
-                  <br><br><h2>Alternate Ad Sources</h2>
+              <br><br><h2>Alternate Ad Sources</h2>
 
           <div class="card-white">
-            <h1>test</h1>
-            <p>test</p>
+            <h1>Google Adwords</h1>
+            <br><br>
+            <p>You can try it yourself, but we know how that turns out.</p>
           </div>
+    <% end %>
+
+    <% if current_user.agency == true %>
+     <h2><%= link_to "SEARCH FOR CAMPAIGN", projects_path, class: "btn btn-danger text-uppercase js-scroll-trigger" %></h2>
+      <br><br><h2>Your Campaign Bids</h2>
+          <% current_user.proposals.each do |pro| %>
+
+              <img src="" alt="">
+
+              <div class="card" style="background-image: url('<%= image_path('advertising-photo.jpg') %>')">
+                <div class="card-category">Pending</div>
+                <div class="card-description">
+                  <h2>Name: <%= pro.project.name %></h2>
+                  <p>Your Bid: <%= pro.bid_amount %></p>
+                  <% if pro.accepted == true %>
+                  <p>Status: Accepted</p>
+                  <% else %>
+                  <p>Status: Pending</p>
+                  <% end %>
+                </div>
+                <!-- <a class="card-link" href="#" ></a> -->
+                <%#= link_to "", project_path(project.id), class: "card-link" %>
+              </div>
+
+    <% end %>
+    <% end %>
+
+
+
+
+
+
       </div>
-<!--     </div>
-
-  </div> -->
-
-<!-- </header> -->
-
