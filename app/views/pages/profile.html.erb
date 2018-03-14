@@ -16,7 +16,8 @@
                   <p>Active Proposals <%= project.proposals.count %></p>
                 </div>
                 <!-- <a class="card-link" href="#" ></a> -->
-                <%= link_to "", project_path(project.id), class: "card-link" %>
+                <%= link_to "See Details", project_path(project.id), class: "btn btn-success" %>
+                <%= link_to "See Active Proposals", project_proposals_path(project.id) %>
               </div>
 
           <% end %>
@@ -32,7 +33,27 @@
 
     <% if current_user.agency == true %>
      <h2><%= link_to "SEARCH FOR CAMPAIGN", projects_path, class: "btn btn-danger text-uppercase js-scroll-trigger" %></h2>
+      <br><br><h2>Your Campaign Bids</h2>
+          <% current_user.proposals.each do |pro| %>
 
+              <img src="" alt="">
+
+              <div class="card" style="background-image: url('<%= image_path('advertising-photo.jpg') %>')">
+                <div class="card-category">Pending</div>
+                <div class="card-description">
+                  <h2>Name: <%= pro.project.name %></h2>
+                  <p>Your Bid: <%= pro.bid_amount %></p>
+                  <% if pro.accepted == true %>
+                  <p>Status: Accepted</p>
+                  <% else %>
+                  <p>Status: Pending</p>
+                  <% end %>
+                </div>
+                <!-- <a class="card-link" href="#" ></a> -->
+                <%#= link_to "", project_path(project.id), class: "card-link" %>
+              </div>
+
+    <% end %>
     <% end %>
 
 
