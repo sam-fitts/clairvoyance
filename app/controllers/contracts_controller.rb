@@ -1,5 +1,4 @@
 class ContractsController < ApplicationController
-  # mount_uploader :pdf, PdfUploader
 
   def new
     @contract = Contract.new
@@ -7,19 +6,17 @@ class ContractsController < ApplicationController
 
   def create
     @contract = Contract.new(contract_params)
-    @user = current_user
-    @contract.user = @user
+    @contract.user = current_user
     if @contract.save
       redirect_to contract_path(@contract)
     else
-      @contract = Contract.all
-      render 'users/show'
+      render :new
     end
   end
 
   private
 
   def contract_params
-    params.require(:project).permit(:proposal_id, :business_id, :amount, :pdf, :pdf_cache)
+    params.require(:contract).permit(:proposal_id, :business_id, :proposal_id, :pdf, :pdf_cache, :amount)
   end
 end
