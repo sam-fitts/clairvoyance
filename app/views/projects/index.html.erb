@@ -2,6 +2,12 @@
   <div style="background-color: #f4ebe3;">
 <!--     <div class="intro-text"> -->
       <h2>Available ad campaigns:</h2>
+        <%= form_tag projects_path, method: :get do %>
+          <%= select_tag :tags, options_for_select(@projects.pluck(:tags).uniq.reject(&:blank?), selected: params[:tags]), include_blank: "All", onchange: "this.form.submit()"%>
+          <%#= button_tag(type: "submit") do %>
+            <%#= content_tag(:strong, 'Search') %>
+          <%# end %>
+      <% end %>
 
         <% @projects.each do |project| %>
           <hr>
