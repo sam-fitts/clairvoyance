@@ -1,28 +1,29 @@
-  <br>
-  <div class="form-control formatted-page-expanded">
+<div class="jumbotron" style="margin: 1% 8%;">
     <% if current_user.agency == false %>
-     <h2><%= link_to "SUBMIT A CAMPAIGN", new_project_path, class: "btn btn-danger text-uppercase js-scroll-trigger" %></h2>
-       <br><br><h2>Your Campaigns</h2>
-          <% current_user.projects.each do |project| %>
+       <h2 class="display-5">Your Campaigns <%= link_to "(add a new campaign)", new_project_path, :style => "text-decoration: none" %></h2>
+<!--        <p><%= link_to "SUBMIT A CAMPAIGN", new_project_path, class: "btn btn-danger text-uppercase js-scroll-trigger" %></p> -->
+<!--          <h2></h2> -->
 
-              <img src="" alt="">
+<center>
+  <div class="container">
+    <div class="row">
+      <% current_user.projects.each do |project| %>
+          <div class="card text-white bg-primary mb-4" style="max-width: 20rem; margin: 15px;">
+            <div class="card-header"><%= project.name %><br>Budget: &#036;<%= project.budget %></div>
+            <div class="card-body">
+              <h4 class="card-title">Proposals Received: <%= project.proposals.count %></h4>
+              <p class="card-text">
+                <%= link_to "See Details", project_path(project.id), class: "btn btn-danger" %>
+                <%= link_to "See Proposals", project_proposals_path(project.id), class: "btn btn-danger" %></p>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</center>
 
-              <div class="card" style="background-image: url('<%= image_path('advertising-photo.jpg') %>')">
-                <div class="card-category">Pending</div>
-                <div class="card-description">
-                  <h2>Name: <%= project.name %></h2>
-                  <p>Budget: <%= project.budget %></p>
-                  <p>Tags: <%= project.tags %></p>
-                  <p>Active Proposals <%= project.proposals.count %></p>
-                </div>
-                <!-- <a class="card-link" href="#" ></a> -->
-                <%= link_to "See Details", project_path(project.id), class: "btn btn-success" %>
-                <%= link_to "See Active Proposals", project_proposals_path(project.id) %>
-              </div>
 
-          <% end %>
-
-              <br><br><h2>Alternate Ad Sources</h2>
+              <br><br><h2 class="display-5">Alternate Ad Sources</h2>
 
           <div class="card-white">
             <h1>Google Adwords</h1>

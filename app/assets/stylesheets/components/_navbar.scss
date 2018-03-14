@@ -49,7 +49,7 @@
   color: #841E0B;
   text-decoration: none;
   // font-weight: bold;
-  font-size: 1em;
+  font-size: 16px;
   border-bottom: 3px solid #841E0B;
   border-top: 3px solid #841E0B;
 }
@@ -67,6 +67,7 @@
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
+  text-align: center;
 }
 .navbar-wagon-dropdown-menu li > a:hover {
   background: transparent !important;
@@ -79,7 +80,7 @@
   position: absolute;
   right: 10px;
   top: -6px;
-  background-color: white;
+  background-color: #FFBD81;
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
