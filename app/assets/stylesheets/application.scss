@@ -24,6 +24,7 @@
 
 body {
   background: #abd7c0;
+  // background: #c7eddd;
 }
 
 .container {
@@ -181,4 +182,9 @@ section.big-product .info a.add-to-cart {
 #index-style {
   color: #792A1B;
   font-size: 1.2em;
+}
+
+.float-right {
+  float: right;
+  height: 100px;
 }

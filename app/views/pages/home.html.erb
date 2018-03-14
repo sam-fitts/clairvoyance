@@ -1,12 +1,12 @@
 <div class="container">
   <section class="big-product" style="background-color: #abd7c0; margin: 0 auto;">
-    <div class="row" style="height: 90vh;">
+    <div class="row" style="height: 81vh;">
       <div class="col-md-3 product align-self-end d-none d-md-block"><%= image_tag "home-left.png", :class => "img-fluid" %></div>
       <div class="col-md-5 align-self-center">
         <center><h1 style="color: #792A1B">Connect to Experienced Digital Marketers</h1>
         <h3 style="color: #792A1B">Reach Your Customers Efficiently and Effectively</h3><br>
 <!--         <p class="lead">And an even wittier subheading.And an even wittier subheading.And an even wittier subheading.And an even wittier subheading.</p> -->
-        <%= link_to "LOG IN", new_user_session_path, class: "btn btn-danger text-uppercase js-scroll-trigger" %></center><br><br>
+        <%= link_to "SIGN UP", new_user_session_path, class: "btn btn-danger text-uppercase js-scroll-trigger" %></center><br><br>
       </div>
 
       <div class="col-md-4 product align-self-end">
@@ -14,6 +14,17 @@
       </div>
     </div>
   </section>
+</div>
+
+<div class="jumbotron" style="margin: 2% 8%;">
+  <%= image_tag "home-right.png", :class => "float-right" %>
+  <h1 class="display-5">Hello, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p>
 </div>
 
 
