@@ -1,13 +1,20 @@
 class ProjectsController < ApplicationController
   def index
+    @user = current_user
     @projects = Project.all
-    if params[:tags] == ''
-      @projects
-    elsif params[:tags]
-      @projects  = Project.where('tags ilike ?', params[:tags])
-    else
-      @projects
+    if @user.agency == true
+
+      if params[:tags] == ''
+        @projects
+      elsif params[:tags]
+        @projects  = Project.where('tags ilike ?', params[:tags])
+      else
+        @projects
+
     end
+  else
+    redirect_to profile_path
+  end
   end
 
   def show
