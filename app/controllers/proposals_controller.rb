@@ -36,8 +36,8 @@ class ProposalsController < ApplicationController
   def update
     @project = Project.find(params[:project_id])
     @proposal = Proposal.find(params[:id])
-    # @proposal.update(proposal_params)
     if @proposal.update(proposal_params)
+      @project.proposals.where(accepted: false).destroy_all
       redirect_to profile_path
     else
       render :show

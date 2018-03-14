@@ -1,6 +1,13 @@
 class ProjectsController < ApplicationController
   def index
     @projects = Project.all
+    if params[:tags] == ''
+      @projects
+    elsif params[:tags]
+      @projects  = Project.where('tags ilike ?', params[:tags])
+    else
+      @projects
+    end
   end
 
   def show
