@@ -1,6 +1,5 @@
-<br>
-  <div class="form-control formatted-page">
-      <h2>Submit proposal for <%= @project.name %></h2>
+<div class="jumbotron" style="margin: 1% 8%;">
+      <h2 class="display-5">Submit proposal for <%= @project.name %></h2>
       <%= simple_form_for [@project, @proposal]  do |f| %>
           <%= f.input :description %>
           <%= f.input :bid_amount %>
@@ -9,4 +8,4 @@
           <%#= f.submit "Submit Proposal" %>
           <%= f.button :submit, "Submit Proposal", class: "btn btn-primary" %><br>
         <% end %>
-    </div>
+</div>

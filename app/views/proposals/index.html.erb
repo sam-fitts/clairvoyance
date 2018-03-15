@@ -1,5 +1,7 @@
-<% @proposals.each do |proposal| %>
-  <%= proposal.agency.business_name %>
-  <%= proposal.bid_amount %>
-  <%= link_to "See Details", project_proposal_path(proposal.project, proposal) %>
-<% end %>
+<div class="jumbotron" style="margin: 1% 8%;">
+  <% @proposals.each do |proposal| %>
+    <%= proposal.agency.business_name %>
+    <%= proposal.bid_amount %>
+    <%= link_to "See Details", project_proposal_path(proposal.project, proposal) %>
+  <% end %>
+</div>

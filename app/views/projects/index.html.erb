@@ -1,20 +1,19 @@
-
-  <div style="background-color: #f4ebe3;">
+<div class="jumbotron" style="margin: 1% 8%;">
 <!--     <div class="intro-text"> -->
-      <h2>Available ad campaigns:</h2>
+  <h2 class="display-5">Available ad campaigns:</h2>
 
-        <% @projects.each do |project| %>
-          <hr>
-          <p><strong>Project name:</strong> <%= project.name %></p>
-          <p><strong>Duration:</strong> <%= project.duration %></p>
-          <p><strong>Description:</strong> <%= project.description %></p>
-          <p><strong>Difficulty:</strong> <%= project.difficulty %></p>
-          <p><strong>Budget:</strong> <%= project.budget %></p>
-          <p><strong>Applicable tags:</strong> <%= project.tags %></p>
-          <p><%= link_to "View Project", project_path(project), class: "btn btn-success text-uppercase js-scroll-trigger" %></p>
-          <hr>
-        <% end %>
+    <% @projects.each do |project| %>
+      <hr>
+      <p><strong>Project name:</strong> <%= project.name %></p>
+      <p><strong>Duration:</strong> <%= project.duration %></p>
+      <p><strong>Description:</strong> <%= project.description %></p>
+      <p><strong>Difficulty:</strong> <%= project.difficulty %></p>
+      <p><strong>Budget:</strong> <%= project.budget %></p>
+      <p><strong>Applicable tags:</strong> <%= project.tags %></p>
+      <p><%= link_to "View Project", project_path(project), class: "btn btn-success text-uppercase js-scroll-trigger" %></p>
+      <hr>
+    <% end %>
 <!--       </div> -->
-    </div>
+</div>
 
 <!-- class="form-control formatted-page"  -->
