@@ -8,7 +8,11 @@
 
 puts "Seeding DB..."
 
-User.destroy_all
+Proposal.delete_all
+Project.delete_all
+User.delete_all
+
+
 
 User.create!(
   email: "user@agency.test",
@@ -26,10 +30,10 @@ User.create!(
 
 puts "DB has now #{User.count} users."
 
-Project.destroy_all
+
 
 Project.create!(
-  business: User.all.sample,
+  business: User.last,
   budget: 8000,
   tags: "shoes, fashion, accessories.",
   name: "Ninet",
@@ -48,7 +52,7 @@ Project.create!(
   )
 
 Project.create!(
-  business: User.all.sample,
+  business: User.last,
   budget: 100000,
   tags: "software, tech, IT, fast-growing.",
   name: "Softrepo",
@@ -67,7 +71,7 @@ Project.create!(
   )
 
 Project.create!(
-  business: User.all.sample,
+  business: User.last,
   budget: 5000,
   tags: "handmade furniture, handmade, goods",
   name: "Palora",
@@ -86,7 +90,7 @@ Project.create!(
   )
 
 Project.create!(
-  business: User.all.sample,
+  business: User.last,
   budget: 25000,
   tags: "buy anything.",
   name: "Quickbuy",
@@ -104,10 +108,10 @@ Project.create!(
   tactic: "Non-targeted digital marketing"
   )
 
-Proposal.destroy_all
+
 
 Proposal.create!(
-  agency: User.all.sample,
+  agency: User.first,
   project: Project.all.sample,
   bid_amount: 10000,
   description: "We are interested in pursuing your project",
@@ -116,16 +120,16 @@ Proposal.create!(
 )
 
 Proposal.create!(
-  agency: User.all.sample,
+  agency: User.first,
   project: Project.all.sample,
   bid_amount: 8500,
   description: "We are extremely interested in working on your project",
   pdf: "Please have a look at our tailored proposal for you",
-  accepted: true
+  accepted: false
 )
 
 Proposal.create!(
-  agency: User.all.sample,
+  agency: User.first,
   project: Project.all.sample,
   bid_amount: 7500,
   description: "We are very interested in getting busy with your project",
@@ -134,16 +138,16 @@ Proposal.create!(
 )
 
 Proposal.create!(
-  agency: User.all.sample,
+  agency: User.first,
   project: Project.all.sample,
   bid_amount: 8675,
   description: "We are very keen on doing your project",
   pdf: "Please have a look at our what work we can do for you",
-  accepted: true
+  accepted: false
 )
 
 Proposal.create!(
-  agency: User.all.sample,
+  agency: User.first,
   project: Project.all.sample,
   bid_amount: 9820,
   description: "We are extremely keen on devoting time to your project",
@@ -152,16 +156,16 @@ Proposal.create!(
 )
 
 Proposal.create!(
-  agency: User.all.sample,
+  agency: User.first,
   project: Project.all.sample,
   bid_amount: 4523,
   description: "We are interested in puring your project",
   pdf: "Please have a look at our proposal",
-  accepted: true
+  accepted: false
 )
 
 Proposal.create!(
-  agency: User.all.sample,
+  agency: User.first,
   project: Project.all.sample,
   bid_amount: 9100,
   description: "We are interested in puring your project",
