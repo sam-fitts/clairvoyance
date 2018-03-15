@@ -114,7 +114,7 @@ Proposal.create!(
   project: Project.all.sample,
   bid_amount: 10000,
   description: "We are interested in pursuing your project",
-  pdf_url: "https://res.cloudinary.com/dxwhyx0o0/image/upload/v1521116160/Untitled_document.pdf",
+  pdf: "https://res.cloudinary.com/dxwhyx0o0/image/upload/v1521116160/Untitled_document.pdf",
   accepted: false
 )
 
@@ -123,7 +123,7 @@ Proposal.create!(
   project: Project.all.sample,
   bid_amount: 8500,
   description: "We are extremely interested in working on your project",
-  pdf_url: "https://res.cloudinary.com/dxwhyx0o0/image/upload/v1521116160/Untitled_document.pdf",
+  pdf: "https://res.cloudinary.com/dxwhyx0o0/image/upload/v1521116160/Untitled_document.pdf",
   accepted: false
 )
 
@@ -132,7 +132,7 @@ Proposal.create!(
   project: Project.all.sample,
   bid_amount: 7500,
   description: "We are very interested in getting busy with your project",
-  pdf_url: "https://res.cloudinary.com/dxwhyx0o0/image/upload/v1521116160/Untitled_document.pdf",
+  pdf: "https://res.cloudinary.com/dxwhyx0o0/image/upload/v1521116160/Untitled_document.pdf",
   accepted: false
 )
 
@@ -141,7 +141,7 @@ Proposal.create!(
   project: Project.all.sample,
   bid_amount: 8675,
   description: "We are very keen on doing your project",
-  pdf_url: "https://res.cloudinary.com/dxwhyx0o0/image/upload/v1521116160/Untitled_document.pdf",
+  pdf: "https://res.cloudinary.com/dxwhyx0o0/image/upload/v1521116160/Untitled_document.pdf",
   accepted: false
 )
 
@@ -150,7 +150,7 @@ Proposal.create!(
   project: Project.all.sample,
   bid_amount: 9820,
   description: "We are extremely keen on devoting time to your project",
-  pdf_url: "https://res.cloudinary.com/dxwhyx0o0/image/upload/v1521116160/Untitled_document.pdf",
+  pdf: "https://res.cloudinary.com/dxwhyx0o0/image/upload/v1521116160/Untitled_document.pdf",
   accepted: false
 )
 
@@ -159,7 +159,7 @@ Proposal.create!(
   project: Project.all.sample,
   bid_amount: 4523,
   description: "We are interested in puring your project",
-  pdf_url: "https://res.cloudinary.com/dxwhyx0o0/image/upload/v1521116160/Untitled_document.pdf",
+  pdf: "https://res.cloudinary.com/dxwhyx0o0/image/upload/v1521116160/Untitled_document.pdf",
   accepted: false
 )
 
