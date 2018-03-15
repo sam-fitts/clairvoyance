@@ -8,7 +8,22 @@
           <p><strong>Description:</strong> <%= @project.description %></p>
           <p><strong>Difficulty:</strong> <%= @project.difficulty %></p>
           <p><strong>Budget(US$):</strong> <%= @project.budget %></p>
-          <p><strong>Applicable tags:</strong> <%= @project.tags %></p>
+          <p><strong>Goal:</strong> <%= @project.goal %></p>
+          <p><strong>Target Audience:</strong> <%= @project.target_audience %></p>
+          <p><strong>Info:</strong> <%= @project.info %></p>
+          <p><strong>Current Tools:</strong> <%= @project.current_tools %></p>
+          <p><strong>Problems:</strong> <%= @project.problems %></p>
+          <p><strong>Metrics:</strong> <%= @project.metrics %></p>
+          <p><strong>Visiting:</strong> <%= @project.visiting %></p>
+          <p><strong>Season:</strong> <%= @project.season %></p>
+          <p><strong>In House Team:</strong> <%= @project.in_house %></p>
+          <p><strong>Previous Agencies Used:</strong> <%= @project.agencies %></p>
+          <p><strong>Non Profit Status:</strong> <%= @project.non_profit %></p>
+          <p><strong>Current Metrics:</strong> <%= @project.current_metrics %></p>
+          <p><strong>Company Values:</strong> <%= @project.values %></p>
+          <p><strong>Tactics:</strong> <%= @project.tactic %></p>
+
+
           <% if current_user.agency == true %>
           <p><%= link_to "Submit Proposal", new_project_proposal_path(@project.id), class: "btn btn-danger text-uppercase js-scroll-trigger" %></p>
           <% end %>
