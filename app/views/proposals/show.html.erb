@@ -1,12 +1,16 @@
 <%= @proposal.agency.business_name %>
 <%= @proposal.description %>
 <%= @proposal.bid_amount %>
+<% if @proposal.pdf.present? == true %>
 <%= link_to "download", @proposal.pdf_url, target: :blank %>
+<% end %>
 <br><br>
 <br><br>
+<% if current_user.agency == false && @proposal.accepted == false %>
 <%= simple_form_for [@project, @proposal] do |f| %>
 
   <%= f.input :accepted, label: "Would You Like to Accept This Proposal?", as: :boolean, checked_value: true %>
 
   <%= f.button :submit %>
+<% end %>
 <% end %>
