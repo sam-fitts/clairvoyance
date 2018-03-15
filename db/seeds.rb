@@ -13,17 +13,16 @@ Project.delete_all
 User.delete_all
 
 
-
 User.create!(
-  email: "user@agency.test",
-  password: "password",
+  email: "sal@ad.com",
+  password: "testtest",
   agency: true,
   business_name: 'Agency Company'
 )
 
 User.create!(
-  email: "user@client.test",
-  password: "password",
+  email: "sam@hp.com",
+  password: "testtest",
   agency: false,
   business_name: 'Client Company'
 )
