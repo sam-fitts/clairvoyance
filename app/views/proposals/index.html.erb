@@ -1,7 +1,11 @@
 <div class="jumbotron" style="margin: 1% 8%;">
+
+  <h1>Proposals for <%=  "#{@project.name}" %></h1>
 <% @proposals.each do |proposal| %>
   <h3>Agency: <%= proposal.agency.business_name %></h3>
   <h3>Expected Cost: <%= proposal.bid_amount %></h3>
+  <hr>
   <h4><%= link_to "See Details", project_proposal_path(proposal.project, proposal) %></h4>
+  <br><br>
 <% end %>
 </div>
