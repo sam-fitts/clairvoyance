@@ -1,6 +1,20 @@
 class ProjectsController < ApplicationController
   def index
+    @user = current_user
     @projects = Project.all
+    if @user.agency == true
+
+      if params[:tags] == ''
+        @projects
+      elsif params[:tags]
+        @projects  = Project.where('tags ilike ?', params[:tags])
+      else
+        @projects
+
+    end
+  else
+    redirect_to profile_path
+  end
   end
 
   def show
@@ -36,7 +50,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:budget, :business_id, :tags, :name, :duration, :difficulty)
+    params.require(:project).permit(:budget, :business_id, :tags, :name, :duration, :difficulty, :goal, :target_audience,  :info,  :current_tools,  :problems, :metrics, :visiting, :season, :in_house, :agencies, :non_profit, :current_metrics, :values, :tactic)
   end
 
 end

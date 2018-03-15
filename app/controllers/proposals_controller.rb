@@ -8,7 +8,7 @@ class ProposalsController < ApplicationController
   def show
     @proposal = Proposal.find(params[:id])
     @project = Project.find(params[:project_id])
-
+    @contract = @proposal.contract
   end
 
   def create
@@ -36,8 +36,8 @@ class ProposalsController < ApplicationController
   def update
     @project = Project.find(params[:project_id])
     @proposal = Proposal.find(params[:id])
-    # @proposal.update(proposal_params)
     if @proposal.update(proposal_params)
+      @project.proposals.where(accepted: false).destroy_all
       redirect_to profile_path
     else
       render :show
