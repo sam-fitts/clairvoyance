@@ -56,8 +56,10 @@
                   <p class="card-text">
                       <% if pro.accepted == true %>
                       <p>Status: Accepted</p>
+                       <h5><%= link_to "Submit Your Contract", new_project_proposal_contract_path(pro.project, pro) %></h5>
                       <% else %>
                       <p>Status: Pending</p>
+                      <h5><%= link_to "See Details", project_path(pro.project) %></h5>
                       <% end %>
 
                 </div>
