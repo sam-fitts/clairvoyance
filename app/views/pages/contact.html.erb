@@ -1,0 +1,29 @@
+<div class="container">
+  <form action="/thank_you">
+      <div class="card text-white bg-primary mb-4" style="max-width: 20rem; margin: 15px;">
+      <div class="card-header">Contact</div>
+        <div class="card-body">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+          <label for="country">How did you hear about us?</label>
+          <select id="country" name="country">
+            <option value="australia">Internet Search</option>
+            <option value="canada">Word of Mouth</option>
+            <option value="usa">Magazine</option>
+            <option value="australia">Digital Ad</option>
+            <option value="canada">Social Media</option>
+            <option value="usa">Other</option>
+           </select>
+
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+          <input type="submit" value="Submit">
+        </div>
+      </div>
+
+  </form>
+</div>

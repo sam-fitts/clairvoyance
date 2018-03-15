@@ -2,7 +2,7 @@
     <div class="form-control formatted-page">
       <h2>SUBMIT A PROJECT</h2><br>
       <%= simple_form_for @project do |f| %>
-        <%= f.input :name %>
+        <%= f.input :name, autofocus: true %>
         <%= f.input :duration, placeholder: "6 months, 12 months, etc." %>
         <%= f.input :description, placeholder: "Tell us about your expectations." %>
         <%= f.input :difficulty, as: :select, include_blank: false, collection: ['Low', 'Intermediate', 'High'] %>
