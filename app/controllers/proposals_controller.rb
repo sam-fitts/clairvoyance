@@ -6,6 +6,8 @@ class ProposalsController < ApplicationController
   end
 
   def show
+    @project = Project.find(params[:project_id])
+    @proposals = @project.proposals
     @proposal = Proposal.find(params[:id])
     @project = Project.find(params[:project_id])
     @contract = @proposal.contract

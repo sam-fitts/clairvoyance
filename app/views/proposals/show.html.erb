@@ -1,8 +1,11 @@
+
 <h2>Agency: <%= @proposal.agency.business_name %></h2>
 <h4>Description: <%= @proposal.description %></h4>
 <h4>Expected Cost: <%= @proposal.bid_amount %></h4>
 <% if @proposal.pdf.present? == true %>
 <h4>Detailed Proposal: <%= link_to "View", @proposal.pdf_url, target: :blank, style: "text-decoration: none" %></h4>
+  <% else %>
+<h4>User Has Not Uploaded a PDF</h4>
 <% end %>
 
 <% unless @proposal.contract.nil? %>
