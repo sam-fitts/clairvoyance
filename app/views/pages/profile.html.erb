@@ -12,8 +12,10 @@
             <div class="card-body">
               <% if project.proposals.none? { |proposal| proposal.accepted } %>
               <h4 class="card-title">Proposals Received: <%= project.proposals.count %></h4>
-              <% elsif project.proposals.any? { |proposal| proposal.accepted } %>
+              <% elsif project.proposals.any? { |proposal| proposal.contract } %>
               <h4 class="card-title">Contract Available</h4>
+              <% elsif project.proposals.any? { |proposal| proposal.accepted } %>
+              <h4 class="card-title">Proposal Accepted</h4>
               <% end %>
               <p class="card-text">
                 <%= link_to "See Details", project_path(project.id), class: "btn btn-danger" %>

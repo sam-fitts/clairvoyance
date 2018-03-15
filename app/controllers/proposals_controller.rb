@@ -3,7 +3,6 @@ class ProposalsController < ApplicationController
   def index
     @project = Project.find(params[:project_id])
     @proposals = @project.proposals
-    @contract = @proposal.contract
   end
 
   def show
