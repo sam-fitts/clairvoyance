@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :contact, :thank_you]
 
   def home
-    redirect_to profile_path if user_signed_in?
+    # redirect_to profile_path if user_signed_in?
     @users = User.all
   end
 
