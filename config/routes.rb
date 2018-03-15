@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   # For '/' to also redirect to home
   get '/', to: "pages#home"
   get '/profile', to: "pages#profile"
+  get '/contact', to: "pages#contact"
+  get '/thank_you', to: "pages#thank_you"
   # get 'users/current_user'
   # To have Proposals nested in Projects
 
