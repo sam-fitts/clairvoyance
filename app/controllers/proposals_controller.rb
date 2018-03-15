@@ -8,7 +8,7 @@ class ProposalsController < ApplicationController
   def show
     @proposal = Proposal.find(params[:id])
     @project = Project.find(params[:project_id])
-
+    @contract = @proposal.contract
   end
 
   def create
