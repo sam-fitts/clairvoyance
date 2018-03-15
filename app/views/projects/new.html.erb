@@ -1,33 +1,145 @@
-  <br>
-    <div class="form-control formatted-page">
-      <h2>SUBMIT A PROJECT</h2><br>
-      <%= simple_form_for @project do |f| %>
-        <%= f.input :name, autofocus: true %>
-        <%= f.input :duration, placeholder: "6 months, 12 months, etc." %>
-        <%= f.input :description, placeholder: "Tell us about your expectations." %>
-        <%= f.input :difficulty, as: :select, include_blank: false, collection: ['Low', 'Intermediate', 'High'] %>
-        <%= f.input :budget %>
-        <%= f.input :tags, placeholder: "Industry, high-pressure, etc." %>
-        <%= f.input :goal, placeholder: "What are your campaign goals?" %>
-        <%= f.input :target_audience, placeholder: "Describe your target audience in detail." %>
-        <%= f.input :info, placeholder: "What information do your customers need to make an informed buying decision?" %>
-        <%= f.input :current_tools, label: 'What current advertising tools are you using?', as: :check_boxes, collection: ['Twitter', 'Google Adwords', 'Facebook', 'Amazon', 'Ebay', 'Airbnb', 'Uber', 'Yahoo', 'Youtube', 'LinkedIn' 'Other digital marketing agency', 'None'] %>
-        <%= f.input :problems, label: 'What problem is your product/ service trying to solve?', placeholder: "What problems do your product or service seek to solve?" %>
-        <%= f.input :metrics, label: 'Which metrics are you most interested in improving? Check all that apply.', as: :check_boxes, collection: ['Revenue', 'Clicks', 'Conversions [Sales/ Leads]', 'Followers', 'Visitors', 'Subscribers', 'Return on Ad Spend'] %>
-        <%= f.input :visiting, label: 'When your audience visits your website, what are you aiming for them to do? Check all that apply.', as: :check_boxes, collection: ['Fill a form', 'Buy a physical product', 'Buy a digital product', 'Purchase a recurring subscription', 'Buy a non-digital service', 'Provide feedback to you in the form of a survey', 'Use your free service', 'Provide online input in improving your product [ex. providing code, or marketing ideas', 'other'] %>
-        <%= f.input :season, label: 'What season(s) are you busiest?', placeholder: "Type in your busiest season(s)." %>
-        <%= f.input :in_house, label: 'Do you currently have designers or web developers in-house?', placeholder: "Mention in-house, part-time, contracted, feel free to describe." %>
-        <%= f.input :agencies, label: 'Have you previously worked with agencies before? What made you change agencies?', placeholder: "We'd like to know how we could improve your experience." %>
-        <%= f.input :non_profit, label: 'Were you previously involved in any non-profit or eco-friendly work?', placeholder: "Yes or no? If yes, feel free to explain as much as you like." %>
-        <%= f.input :current_metrics, label: 'Are you comfortable sharing your current metrics?', placeholder: "Metrics, can be any results of any previous ad campaigns, just to know what to do better." %>
-        <%= f.input :values, label: 'What values & beliefs define your brand?', placeholder: "One word values, phrases, anything you would like your brand to represent." %>
-        <%= f.input :tactic, label: 'Are there any specific marketing tactics that have generated the most value for your company?', placeholder: "Type in any effective tactics you have tried." %>
-        <%#= f.submit "Create Your Project" %>
-        <%= f.button :submit, "Create Your Project", class: "btn btn-primary" %><br>
-      <% end %>
-    </div>
-    <br>
 
+
+<style>
+/*input {
+  display: none;
+  visibility: hidden;
+}*/
+label#toggler {
+  display: block;
+  padding: 0.5em;
+  /*text-align: center;*/
+  border-bottom: 1px solid #CCC;
+  /*color: #666;*/
+}
+label#toggler:hover {
+  /*color: #000;*/
+}
+label#toggler::before {
+  /*font-family: Consolas, monaco, monospace;*/
+/*  font-weight: bold;
+  font-size: 15px;
+  content: "+";*/
+  vertical-align: text-top;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 3px;
+  background: radial-gradient(ellipse at center, #CCC 50%, transparent 50%);
+}
+#expand {
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.5s;
+  /*background: url(http://placekitten.com/g/600/300);*/
+  /*color: #FFF;*/
+}
+section {
+  padding: 0 20px;
+}
+#toggle:checked ~ #expand {
+  min-height: 400px;
+  overflow-y: scroll;
+}
+/*#toggle:checked ~ label#toggler::before {
+  content: "-";
+}*/
+  </style>
+
+
+<div class="jumbotron" style="margin: 1% 8%;">
+  <h2 class="display-5 centered-button">Submit a Campaign</h2>
+  <br>
+
+
+    <!-- <form> -->
+    <%= simple_form_for @project do |f| %>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <%= f.input :name, label: 'CAMPAIGN TITLE:' %>
+        </div>
+        <div class="form-group col-md-6">
+          <%= f.input :duration, label: 'Specify its duration:' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :description, label: "Describe its goal in a sentence:" %>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <%= f.input :budget, label: 'Expected budget ($USD):' %>
+       </div>
+        <div class="form-group col-md-6">
+          <%= f.input :tags, label: "Your industry in 1-3 keywords:" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :problems, label: 'The problem your product or service is trying to solve:' %>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <%= f.input :target_audience, label: 'Your target audience:' %>
+       </div>
+        <div class="form-group col-md-6">
+          <%= f.input :tactic, label: 'Any previously utilized successful marketing tactics?' %>
+        </div>
+      </div>
+
+      <center>
+        <p>To receive additional support from specialists, please provide ONE or more optional answers by clicking below:</p>
+      </center>
+        <input id="toggle" type="checkbox" style="display: none; visibility: hidden;">
+        <label for="toggle" id="toggler" class="btn btn-info">Optional Questions</label>
+
+      <div id="expand">
+        <section>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <%= f.input :difficulty, as: :select, include_blank: false, collection: ['None', '1-2', '2-5', 'Many more than that'], label: 'How many of these or other ad tools have you used? (Google Adsense, Facebook Ads, Twitter Ads, Youtube, Linkedin)' %>
+            </div>
+            <div class="form-group col-md-6">
+              <%= f.input :metrics, label: 'Which is the single most important metric you are interested in improving?', as: :select, include_blank: true, collection: ['Clicks', 'Conversions [Sales/Leads]', 'Followers', 'Visitors', 'Subscribers', 'Return on Ad Spendings'] %>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <%= f.input :visiting, label: 'What do you want your users to do on your website the most?', as: :select, include_blank: true, collection: ['Buy a physical product', 'Buy a digital product', 'Purchase a recurring subscription', 'Buy a non-digital service', 'Provide feedback to you in the form of a survey', 'Use your free service', 'Other'] %>
+            </div>
+            <div class="form-group col-md-6">
+              <%= f.input :in_house, as: :select, include_blank: false, collection: ['No', 'Yes', 'I am considering such an option'], label: 'Do you currently have designers or web developers in-house?' %>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <%= f.input :agencies, label: 'Have you worked with any ad agencies before? What made you change agencies?' %>
+           </div>
+            <div class="form-group col-md-6">
+              <%= f.input :values, label: 'Very shortly, in a sentence or two: what values and beliefs define your brand?' %>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- <div class="col-xs-4 col-xs-offset-3"> -->
+
+      <br>
+      <div class="centered-button">
+        <%= f.button :submit, "Submit Your Campaign", class: "btn btn-danger" %>
+
+      <% end %>
+      </div>
+      <!-- </div> -->
+
+
+    <!-- </form> -->
+</div>
 
 
 
