@@ -9,24 +9,26 @@
 puts "Seeding DB..."
 
 User.destroy_all
+Proposal.destroy_all
+Project.destroy_all
 
 User.create!(
-  email: "user@agency.test",
-  password: "password",
+  email: "test1@test1.com",
+  password: "test1test1",
   agency: true,
   business_name: 'Agency Company'
 )
 
 User.create!(
-  email: "user@client.test",
-  password: "password",
+  email: "test@test.com",
+  password: "testtest",
   agency: false,
   business_name: 'Client Company'
 )
 
 puts "DB has now #{User.count} users."
 
-Project.destroy_all
+
 
 Project.create!(
   business: User.all.sample,
@@ -124,7 +126,7 @@ Project.create!(
   tactic: "Non-targeted digital marketing"
   )
 
-Proposal.destroy_all
+
 
 Proposal.create!(
   agency: User.all.sample,

@@ -1,0 +1,70 @@
+<div class="jumbotron" style="margin: 1% 8%;">
+    <% if current_user.agency == false %>
+       <h2 class="display-5">Your Campaigns</h2>
+
+
+<center>
+  <div class="container">
+    <div class="row">
+      <% current_user.projects.each do |project| %>
+          <div class="card text-white bg-primary mb-4" style="max-width: 20rem; margin: 15px;">
+            <div class="card-header"><%= project.name %><br>Budget: &#036;<%= project.budget %></div>
+            <div class="card-body">
+              <% if project.proposals.none? { |proposal| proposal.accepted } %>
+              <h4 class="card-title">Proposals Received: <%= project.proposals.count %></h4>
+              <% elsif project.proposals.any? { |proposal| proposal.accepted } %>
+              <h4 class="card-title">Contract Available</h4>
+              <% end %>
+              <p class="card-text">
+                <%= link_to "See Details", project_path(project.id), class: "btn btn-danger" %>
+                <%= link_to "See Proposals", project_proposals_path(project.id), class: "btn btn-danger" %></p>
+            </div>
+          </div>
+      <% end %>
+      <div class="card text-white bg-primary mb-4" style="max-width: 20rem; margin: 15px;">
+            <div class="card-body">
+              <h2 class="card-title"><%= link_to "(Add a New Campaign)", new_project_path, :style => "text-decoration: none" %></h2>
+              <p class="card-text">
+
+            </div>
+          </div>
+    </div>
+  </div>
+</center>
+
+
+              <br><br><h2 class="display-5">Alternate Ad Sources</h2>
+
+          <div class="card-white">
+            <h1><%= link_to "Google Adwords", "https://adwords.google.com/intl/ja_jp/home/#?modal_active=none", target: :blank %></h1>
+            <br><br>
+            <p>You can try it yourself, but we know how that turns out.</p>
+          </div>
+    <% end %>
+
+    <% if current_user.agency == true %>
+    <h2 class="display-5">Your Bids for Ad Campaigns <%= link_to "(add additional bids)", projects_path, :style => "text-decoration: none" %></h2>
+
+
+    <center>
+      <div class="container">
+        <div class="row">
+          <% current_user.proposals.each do |pro| %>
+              <div class="card text-white bg-primary mb-4" style="max-width: 20rem; margin: 15px;">
+                <div class="card-header"><%= pro.project.name %><br>Your Bid ($USD): <%= pro.bid_amount %></div>
+                <div class="card-body">
+                  <p class="card-text">
+                      <% if pro.accepted == true %>
+                      <p>Status: Accepted</p>
+                      <% else %>
+                      <p>Status: Pending</p>
+                      <% end %>
+
+                </div>
+              </div>
+            <% end %>
+        </div>
+      </div>
+    </center>
+
+<% end %>
