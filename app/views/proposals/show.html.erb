@@ -1,15 +1,18 @@
-<%= @proposal.agency.business_name %>
-<%= @proposal.description %>
-<%= @proposal.bid_amount %>
+<h2>Agency: <%= @proposal.agency.business_name %></h2>
+<h4>Description: <%= @proposal.description %></h4>
+<h4>Expected Cost: <%= @proposal.bid_amount %></h4>
 <% if @proposal.pdf.present? == true %>
-<%= link_to "download", @proposal.pdf_url, target: :blank %>
+<h4>Detailed Proposal: <%= link_to "View", @proposal.pdf_url, target: :blank, style: "text-decoration: none" %></h4>
 <% end %>
+
+<%= link_to "Download Contract", @contract.pdf_url, target: :blank, style: "text-decoration: none" %>
+
 <br><br>
-<br><br>
+
 <% if current_user.agency == false && @proposal.accepted == false %>
 <%= simple_form_for [@project, @proposal] do |f| %>
 
-  <%= f.input :accepted, label: "Would You Like to Accept This Proposal?", as: :boolean, checked_value: true %>
+  <h4><%= f.input :accepted, label: "Would You Like to Accept This Proposal?", as: :boolean, checked_value: true %></h4>
 
   <%= f.button :submit %>
 <% end %>
