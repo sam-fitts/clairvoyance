@@ -8,7 +8,7 @@
         <br>
     <% @proposals.each do |proposal| %>
       <p class="lead"><strong>Agency:</strong> <%= proposal.agency.business_name %></p>
-      <p class="lead"><strong>Expected Cost:</strong> $<%= proposal.bid_amount %></p>
+      <p class="lead"><strong>Expected Cost($USD):</strong> <%= number_with_delimiter(proposal.bid_amount) %></p>
       <%= link_to "See Details", project_proposal_path(proposal.project, proposal), class: "btn btn-danger text-uppercase js-scroll-trigger" %>
       <br><br><br>
     <% end %>
