@@ -7,7 +7,7 @@
           <p class="lead"><strong>Duration:</strong> <%= @project.duration %></p>
           <p class="lead"><strong>Description:</strong> <%= @project.description %></p>
           <p class="lead"><strong>Difficulty:</strong> <%= @project.difficulty %></p>
-          <p class="lead"><strong>Budget(US$):</strong> <%= @project.budget %></p>
+          <p class="lead"><strong>Budget($USD):</strong> <%= number_with_delimiter(@project.budget) %></p>
           <p class="lead"><strong>Target Audience:</strong> <%= @project.target_audience %></p>
           <p class="lead"><strong>Problems:</strong> <%= @project.problems %></p>
           <p class="lead"><strong>Metrics:</strong> <%= @project.metrics %></p>
