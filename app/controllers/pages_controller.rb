@@ -8,6 +8,7 @@ class PagesController < ApplicationController
 
   def profile
     @user = current_user
+    # @proposal = current_user.projects.proposal
   end
 
   def contact
