@@ -18,7 +18,7 @@
       <p class="lead"><strong>Duration:</strong> <%= project.duration %></p>
       <p class="lead"><strong>Description:</strong> <%= project.description %></p>
       <p class="lead"><strong>Difficulty:</strong> <%= project.difficulty %></p>
-      <p class="lead"><strong>Budget:</strong> $<%= project.budget %></p>
+      <p class="lead"><strong>Budget($USD):</strong> <%= number_with_delimiter(project.budget) %></p>
       <p class="lead"><strong>Applicable tags:</strong> <%= project.tags %></p>
       <p><%= link_to "View Project", project_path(project), class: "btn btn-success text-uppercase js-scroll-trigger" %></p>
       <hr>

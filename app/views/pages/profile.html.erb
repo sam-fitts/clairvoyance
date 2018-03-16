@@ -10,7 +10,7 @@
               <div class="col-sm-6" style>
                 <div class="card" style="background: #DE6262; background: -webkit-linear-gradient(to right, #FFB88C, #DE6262); background: linear-gradient(to right, #FFB88C, #DE6262); border: 2px solid #E9D6E3;">
 
-                  <div class="card-category">Campaign: <%= project.name %><br>Budget: &#036;<%= project.budget %></div>
+                  <div class="card-category">Campaign: <%= project.name %><br>Budget($USD): <%= number_with_delimiter(project.budget) %></div>
                   <div class="card-description">
                     <% if project.proposals.none? { |proposal| proposal.accepted } %>
                     <h4 class="card-title">Proposals Received: <%= project.proposals.count %></h4>
@@ -82,7 +82,7 @@
               <div class="col-sm-6" style>
                 <div class="card" style="background: #DE6262; background: -webkit-linear-gradient(to right, #FFB88C, #DE6262); background: linear-gradient(to right, #FFB88C, #DE6262); border: 2px solid #E9D6E3;">
 
-                  <div class="card-category">Campaign: <%= pro.project.name %><br>Your Bid ($USD): <%= pro.bid_amount %></div>
+                  <div class="card-category">Campaign: <%= pro.project.name %><br>Your Bid ($USD): <%= number_with_delimiter(pro.bid_amount) %></div>
                   <div class="card-description">
                       <% if pro.accepted == true %>
                       <h4 class="card-title">Bid Status: Accepted</h4>
