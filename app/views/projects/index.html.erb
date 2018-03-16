@@ -1,7 +1,8 @@
 <div class="jumbotron" style="margin: 1% 8%;">
 <!--     <div class="intro-text"> -->
 
-      <h2>Available ad campaigns:</h2>
+      <h2>Available Ad Campaigns:</h2>
+
         <%= form_tag projects_path, method: :get do %>
           <%= select_tag :tags, options_for_select(@projects.pluck(:tags).uniq.reject(&:blank?), selected: params[:tags]), include_blank: "All", onchange: "this.form.submit()"%>
           <%#= button_tag(type: "submit") do %>
@@ -12,12 +13,13 @@
 
     <% @projects.each do |project| %>
       <hr>
-      <p><strong>Project name:</strong> <%= project.name %></p>
-      <p><strong>Duration:</strong> <%= project.duration %></p>
-      <p><strong>Description:</strong> <%= project.description %></p>
-      <p><strong>Difficulty:</strong> <%= project.difficulty %></p>
-      <p><strong>Budget:</strong> <%= project.budget %></p>
-      <p><strong>Applicable tags:</strong> <%= project.tags %></p>
+      <%= image_tag "card-pic2.png", :class => "float-right-small" %>
+      <p class="lead"><strong>Project name:</strong> <%= project.name %></p>
+      <p class="lead"><strong>Duration:</strong> <%= project.duration %></p>
+      <p class="lead"><strong>Description:</strong> <%= project.description %></p>
+      <p class="lead"><strong>Difficulty:</strong> <%= project.difficulty %></p>
+      <p class="lead"><strong>Budget:</strong> $<%= project.budget %></p>
+      <p class="lead"><strong>Applicable tags:</strong> <%= project.tags %></p>
       <p><%= link_to "View Project", project_path(project), class: "btn btn-success text-uppercase js-scroll-trigger" %></p>
       <hr>
     <% end %>
