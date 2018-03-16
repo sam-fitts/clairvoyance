@@ -34,7 +34,6 @@
           </div>
         </div>
       </center>
-    <% end %>
 
               <br><br><h2 class="display-5">Alternate Ad Sources</h2>
 
@@ -68,6 +67,10 @@
             <p>Adgo is an intelligent platform for managing and optimizing campaigns across multiple channels. It bridges brand and performance marketing by delivering personalized touch points to create a seamless experience. <%= link_to "Click here", "https://www.adgo.io/", target: :blank %>.</h2></p>
           </div>
 
+    <% end %>
+
+
+
     <% if current_user.agency == true %>
     <h2 class="display-5">Your Bids for Ad Campaigns <%= link_to "(add additional bids)", projects_path, :style => "text-decoration: none" %></h2>
 
@@ -98,4 +101,32 @@
           </div>
         </div>
       </center>
+
+
+                   <br><br><h2 class="display-5">Top 3 Most Requested Ad Platforms</h2>
+
+          <div class="card-white">
+            <h2><%= link_to image_tag("facebook-business.png"), "https://www.facebook.com/business/", target: :blank %></h2>
+            <br><br>
+            <p>Facebook Business covers advertising on all Facebook companies including Instagram, Messenger and Audience Network. Should you wish to advertise on this platform yourself, <%= link_to "click here.", "https://www.facebook.com/business/", target: :blank %> to start.</p>
+          </div>
+          <div class="card-white">
+            <h2><%= link_to image_tag("google_adwords.png"), "https://adwords.google.com", target: :blank %></h2>
+            <br><br>
+            <p>Text search ads, display ads using banners, YouTube video ads, mobile ads shown in the app. Should you wish to use this service you can <%= link_to "click here.", "https://adwords.google.com/", target: :blank %></h2></p>
+          </div>
+          <div class="card-white">
+            <h2><%= link_to image_tag("twitter.png"), "https://ads.twitter.com", target: :blank %></h2>
+            <br><br>
+            <p>Track the growth of your follower base and see how people engage with every single Tweet. Also advertise for to your target market even if they do not follow you on the platform. to advertise independently on Twitter, <%= link_to "click here", "https://ads.twitter.com", target: :blank %>.</p>
+          </div>
+
+
+     <br><br><h2 class="display-5">Recommended services <%= link_to "(advertise here)", contact_path, :style => "text-decoration: none" %></h2>
+
+          <div class="card-white">
+            <h2><%= link_to image_tag("adgo.png"), "https://www.adgo.io/", target: :blank %></h2>
+            <br><br>
+            <p>Adgo is an intelligent platform for managing and optimizing campaigns across multiple channels. It bridges brand and performance marketing by delivering personalized touch points to create a seamless experience. <%= link_to "Click here", "https://www.adgo.io/", target: :blank %>.</h2></p>
+          </div>
 <% end %>
