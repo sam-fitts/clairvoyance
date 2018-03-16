@@ -9,7 +9,7 @@
         <% if @proposal.pdf.present? == true %>
         <p class="lead"><%= link_to "Detailed Proposal", @proposal.pdf_url, target: :blank, class: "btn btn-danger text-uppercase js-scroll-trigger" %></p>
           <% else %>
-        <p class="lead">User Has Not Uploaded a PDF</p>
+        <p class="lead">This Agency Has Not Uploaded a .PDF File With a Detailed Proposal</p>
         <% end %>
 
         <% unless @proposal.contract.nil? %>

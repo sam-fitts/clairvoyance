@@ -1,5 +1,20 @@
-<%= simple_form_for [@project, @proposal, @contract] do |f| %>
-  <%= f.input :pdf, label: "Upload a PDF" %>
-  <%= f.input :pdf_cache, as: :hidden %>
-  <%= f.button :submit, "Submit contract", class: "btn btn-primary" %><br>
+<div class="jumbotron" style="margin: 1% 8%;">
+  <%= image_tag "projects-right.png", :class => "float-right-medium-plus d-none d-md-block" %>
+  <h2 class="display-5">Almost done!</h2>
+  <br>
+
+  <%= simple_form_for [@project, @proposal, @contract] do |f| %>
+    <div class="form-row">
+    <div class="form-group col-md-6">
+        <%= f.input :pdf, label: "Upload a .PDF file with the final contract:  " %>
+        <%= f.input :pdf_cache, as: :hidden %>
+    </div>
+    <div class="form-group col-md-6">
+
+    </div>
+  </div>
+
+  <%= f.button :submit, "Submit contract", class: "btn btn-danger" %><br>
 <% end %>
+
+</div>
