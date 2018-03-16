@@ -12,12 +12,16 @@
   // border-radius:10px;
   align-items: center;
   margin: auto;
-  text-align: center;
+  // text-align: center;
   padding: 20px;
   height: auto;
   width: auto;
   display: flex;
   flex: 1 0 auto;
+}
+
+.card-white p {
+  padding: 0 20px;
 }
 
 
@@ -44,11 +48,13 @@
   left: 10px;
   font-size: 15px;
   text-transform: uppercase;
+  text-align: left;
 }
 .card-description {
   position: absolute;
   bottom: 10px;
   left: 10px;
+  text-align: left;
 }
 .card-description h2 {
   font-size: 24px;

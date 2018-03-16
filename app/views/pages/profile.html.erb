@@ -10,7 +10,7 @@
               <div class="col-sm-6" style>
                 <div class="card" style="background: #DE6262; background: -webkit-linear-gradient(to right, #FFB88C, #DE6262); background: linear-gradient(to right, #FFB88C, #DE6262); border: 2px solid #E9D6E3;">
 
-                  <div class="card-category">Campaign: <%= project.name %><br>Budget($USD): <%= number_with_delimiter(project.budget) %></div>
+                  <div class="card-category">Campaign: <%= project.name %><br>Budget ($USD): <%= number_with_delimiter(project.budget) %></div>
                   <div class="card-description">
                     <% if project.proposals.none? { |proposal| proposal.accepted } %>
                     <h4 class="card-title">Proposals Received: <%= project.proposals.count %></h4>
@@ -48,7 +48,7 @@
           <div class="card-white">
             <h2><%= link_to image_tag("facebook-business.png"), "https://www.facebook.com/business/", target: :blank %></h2>
             <br><br>
-            <p>Facebook Business covers advertising on all Facebook companies including Instagram, Messenger and Audience Network. Should you wish to advertise on this platform yourself, <%= link_to "click here.", "https://www.facebook.com/business/", target: :blank %> to start.</p>
+            <p>Facebook Business covers advertising on all Facebook companies including Instagram, Messenger and Audience Network. Should you wish to advertise on this platform yourself, <%= link_to "click here", "https://www.facebook.com/business/", target: :blank %> to start.</p>
           </div>
           <div class="card-white">
             <h2><%= link_to image_tag("bing-ads.png"), "https://secure.bingads.microsoft.com", target: :blank %></h2>
