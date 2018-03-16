@@ -168,7 +168,7 @@ Proposal.create!(
   project: Project.all.sample,
   bid_amount: 9100,
   description: "We are interested in puring your project",
-
+  remote_pdf_url: "https://res.cloudinary.com/dxwhyx0o0/image/upload/v1521116160/Untitled_document.pdf",
   accepted: false
 )
 
