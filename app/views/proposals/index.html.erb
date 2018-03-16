@@ -1,11 +1,15 @@
 <div class="jumbotron" style="margin: 1% 8%;">
+<!--     <div class="intro-text"> -->
 
-  <h1>Proposals for <%=  "#{@project.name}" %></h1>
-<% @proposals.each do |proposal| %>
-  <h3>Agency: <%= proposal.agency.business_name %></h3>
-  <h3>Expected Cost: <%= proposal.bid_amount %></h3>
-  <hr>
-  <h4><%= link_to "See Details", project_proposal_path(proposal.project, proposal) %></h4>
-  <br><br>
-<% end %>
+      <%= image_tag "together-2.png", :class => "float-right-medium-plus d-none d-md-block", style: "max-height: 60vh;" %>
+
+      <h2 class="display-5">Campaign Title: <%=  "#{@project.name}" %></h2>
+      <h3 class="display-5">Proposals Received from Digital Agencies:</h2>
+        <br>
+    <% @proposals.each do |proposal| %>
+      <p class="lead"><strong>Agency:</strong> <%= proposal.agency.business_name %></p>
+      <p class="lead"><strong>Expected Cost:</strong> $<%= proposal.bid_amount %></p>
+      <%= link_to "See Details", project_proposal_path(proposal.project, proposal), class: "btn btn-danger text-uppercase js-scroll-trigger" %>
+      <br><br><br>
+    <% end %>
 </div>

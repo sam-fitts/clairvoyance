@@ -1,20 +1,21 @@
 <div class="jumbotron" style="margin: 1% 8%;">
 <!--     <div class="intro-text"> -->
-      <h2 class="display-5"><%= @project.name %></h2>
+      <%= image_tag "projects-right.png", :class => "float-right-big d-none d-md-block" %>
+      <h2 class="display-5">Campaign title: <%= @project.name %></h2>
 
         <%# @projects.each do |project| %>
-          <p><strong>Duration:</strong> <%= @project.duration %></p>
-          <p><strong>Description:</strong> <%= @project.description %></p>
-          <p><strong>Difficulty:</strong> <%= @project.difficulty %></p>
-          <p><strong>Budget(US$):</strong> <%= @project.budget %></p>
-          <p><strong>Target Audience:</strong> <%= @project.target_audience %></p>
-          <p><strong>Problems:</strong> <%= @project.problems %></p>
-          <p><strong>Metrics:</strong> <%= @project.metrics %></p>
-          <p><strong>Visiting:</strong> <%= @project.visiting %></p>
-          <p><strong>In House Team:</strong> <%= @project.in_house %></p>
-          <p><strong>Previous Agencies Used:</strong> <%= @project.agencies %></p>
-          <p><strong>Company Values:</strong> <%= @project.values %></p>
-          <p><strong>Tactics:</strong> <%= @project.tactic %></p>
+          <p class="lead"><strong>Duration:</strong> <%= @project.duration %></p>
+          <p class="lead"><strong>Description:</strong> <%= @project.description %></p>
+          <p class="lead"><strong>Difficulty:</strong> <%= @project.difficulty %></p>
+          <p class="lead"><strong>Budget(US$):</strong> <%= @project.budget %></p>
+          <p class="lead"><strong>Target Audience:</strong> <%= @project.target_audience %></p>
+          <p class="lead"><strong>Problems:</strong> <%= @project.problems %></p>
+          <p class="lead"><strong>Metrics:</strong> <%= @project.metrics %></p>
+          <p class="lead"><strong>Visiting:</strong> <%= @project.visiting %></p>
+          <p class="lead"><strong>In House Team:</strong> <%= @project.in_house %></p>
+          <p class="lead"><strong>Previous Agencies Used:</strong> <%= @project.agencies %></p>
+          <p class="lead"><strong>Company Values:</strong> <%= @project.values %></p>
+          <p class="lead"><strong>Tactics:</strong> <%= @project.tactic %></p>
 
 
           <% if current_user.agency == true %>
@@ -23,7 +24,7 @@
         <%# end %>
 <!--       </div> -->
 <% if current_user.agency == false %>
-<%= link_to "Active Proposals", project_proposals_path(@project) %>
+<%= link_to "Active Proposals", project_proposals_path(@project), class: "btn btn-danger text-uppercase js-scroll-trigger"  %>
 </div>
 <% end %>
 
