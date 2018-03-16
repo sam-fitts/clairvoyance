@@ -3,11 +3,15 @@
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <div class="form-control formatted-page">
+    <br>
     <h2>Enter your email to get a new password</h2><br>
     <%= f.error_notification %>
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.button :submit, "Reset the password", class: "btn btn-primary" %><br><br>
     <%= render "devise/shared/links" %>
+    <br>
+    <%= image_tag "comet-1.png", :class => "pull-center", style: "width: 80px;" %>
+    <br><br>
   </div>
 <% end %>
 

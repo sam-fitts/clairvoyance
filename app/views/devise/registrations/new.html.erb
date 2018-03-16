@@ -3,13 +3,18 @@
       <%= f.error_notification %>
 
       <div class="form-control formatted-page">
-        <h2>Please Enter Your Information</h2>
+        <br>
+        <h2 class="display-5">Please Enter Your Information</h2>
+        <br>
         <%= f.input :business_name, required: true, autofocus: true, label: "Name of Your Business"  %>
         <%= f.input :email, required: true, label: "Your Email" %>
         <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
         <%= f.input :password_confirmation, required: true %>
         <%= f.input :agency, as: :select, label: "Are You Submitting Campaigns, or Submitting Proposals to Campaigns", collection: [["Small Business - Submitting Campaigns",false],["Agency - Submitting Proposals",true]], include_blank: "Please Select Your Business Type", required: true %>
         <%#= f.collection_radio_buttons :agency, [[false, "Client"],[true, "Agency"]], :first, :last %>
-        <%= f.button :submit, "Register", class: "btn btn-primary" %><br>
+        <%= f.button :submit, "Register", class: "btn btn-danger" %><br><br>
+        <%= image_tag "comet-1.png", :class => "pull-center", style: "width: 80px;" %>
+        <br><br>
       </div>
     <% end %>
+<br>
