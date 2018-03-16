@@ -113,7 +113,7 @@ Proposal.create!(
   agency: User.first,
   project: Project.all.sample,
   bid_amount: 10000,
-  description: "We are interested in pursuing your project",
+  description: "Pixelads is an ad agency that specializes in marketing digital software products. We target websites that software developers and enthusiasts visit regularly and push our ads there. We were intruiged by your idea and we believe in its potential to grow over the coming few years. Please find our offer enclosed.",
   remote_pdf_url: "https://res.cloudinary.com/dxwhyx0o0/image/upload/v1521116160/Untitled_document.pdf",
   accepted: false
 )
@@ -122,7 +122,7 @@ Proposal.create!(
   agency: User.first,
   project: Project.all.sample,
   bid_amount: 8500,
-  description: "We are extremely interested in working on your project",
+  description: "We from FASH X AD are interested in taking on your campaign. We only advertise digitally for products in the fashion industry. We target unique small business websites that are quickly gaining popularity over larger and more established businesses. Please find our proposal enclosed, and feel free to contact Emma (emma@fashxad.co.jp) for any enquiries.",
   remote_pdf_url: "https://res.cloudinary.com/dxwhyx0o0/image/upload/v1521116160/Untitled_document.pdf",
   accepted: false
 )
@@ -131,7 +131,7 @@ Proposal.create!(
   agency: User.first,
   project: Project.all.sample,
   bid_amount: 7500,
-  description: "We are very interested in getting busy with your project",
+  description: "We are writing to you from LUX C, an advertising firm that specializes in targetinh HNWI and buyers from the art community. The creativity of your product is one that we have assessed would appeal to artists and collectors. We are looking to advertise your product on art websites and auction houses. Please find enclosed herewith your proposal as well as details on famous pieces we have auctioned off globally.",
   remote_pdf_url: "https://res.cloudinary.com/dxwhyx0o0/image/upload/v1521116160/Untitled_document.pdf",
   accepted: false
 )
@@ -140,7 +140,7 @@ Proposal.create!(
   agency: User.first,
   project: Project.all.sample,
   bid_amount: 8675,
-  description: "We are very keen on doing your project",
+  description: "Please find our proposal enclosed. At FOUND&LOST we take pride in our digital marketing strategies. We advertise on all existing platforms and we use our existing algortithms to ensure that we achieve your required metric goals. Please find our proposal as well as some details about our previous work.",
   remote_pdf_url: "https://res.cloudinary.com/dxwhyx0o0/image/upload/v1521116160/Untitled_document.pdf",
   accepted: false
 )
@@ -149,7 +149,7 @@ Proposal.create!(
   agency: User.first,
   project: Project.all.sample,
   bid_amount: 9820,
-  description: "We are extremely keen on devoting time to your project",
+  description: "P O P is an advertising firm that specializes in marketing products that gain popularity among younger generations. We specialize in marketing to people below the age of 30, and have experience in reaching the consumers through our data algorithms.",
   remote_pdf_url: "https://res.cloudinary.com/dxwhyx0o0/image/upload/v1521116160/Untitled_document.pdf",
   accepted: false
 )
@@ -158,7 +158,7 @@ Proposal.create!(
   agency: User.first,
   project: Project.all.sample,
   bid_amount: 4523,
-  description: "We are interested in puring your project",
+  description: "We at FOR & FOR are interested in pursuing your project. We target people interested in the software industry. We have the best data scientists building advertising algorithms on an ongoing basis, and we can deploy your advertising needs within a week using existing algorithms. Please get in touch should you find our proposal suitable.",
   remote_pdf_url: "https://res.cloudinary.com/dxwhyx0o0/image/upload/v1521116160/Untitled_document.pdf",
   accepted: false
 )
@@ -167,7 +167,7 @@ Proposal.create!(
   agency: User.first,
   project: Project.all.sample,
   bid_amount: 9100,
-  description: "We are interested in puring your project",
+  description: "We are writing to you from 3+7, an ad agency based in Osaka that markets products all around the world. We moved from the paper advertising space to digital, as a result, we can combine your paper advertising needs along with your digital needs. Please find attached the products we offer to our clients, they fit your budget and may add value in raising awareness locally. Regarding digital ads, please look at the digital section of the proposal to see how effective our algorithms can be at reaching your goal. We look forward to hearing back.",
   remote_pdf_url: "https://res.cloudinary.com/dxwhyx0o0/image/upload/v1521116160/Untitled_document.pdf",
   accepted: false
 )
